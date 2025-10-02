@@ -41,9 +41,6 @@ Add or remove ingredients using the controls.
 
 Click "Generate Receipt" to view your order summary with an order number.
 
-📸 Demo
-
-(Add a screenshot or GIF of your website here after deployment.)
 
 📌 Future Improvements
 
