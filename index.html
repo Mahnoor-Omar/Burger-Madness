@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burger Builder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <h2>🍔 Burger Madness</h2>
+    <ul>
+      <li onclick="openLoginModal()">Sign In</li>
+    </ul>
+  </nav>
+  <div class="burger" id="burger">
+    <div class="bun-top">
+      <div class="seeds"></div>
+      <div class="seeds"></div>
+      <div class="seeds"></div>
+    </div>
+    <div id="toppings-container">
+       <!-- lettuce -->
+      <div class="ingredient lettuce" id="lettuce-1" style="display:none;"></div>
+      <div class="ingredient lettuce" id="lettuce-2" style="display:none;"></div>
+      <div class="ingredient lettuce" id="lettuce-3" style="display:none;"></div>
+      <div class="ingredient lettuce" id="lettuce-4" style="display:none;"></div>
+      <div class="ingredient lettuce" id="lettuce-5" style="display:none;"></div>
+
+      <!-- Bacon -->
+      <div class="ingredient bacon" id="bacon-1" style="display:none;"></div>
+      <div class="ingredient bacon" id="bacon-2" style="display:none;"></div>
+      <div class="ingredient bacon" id="bacon-3" style="display:none;"></div>
+      <div class="ingredient bacon" id="bacon-4" style="display:none;"></div>
+      <div class="ingredient bacon" id="bacon-5" style="display:none;"></div>
+
+      <!-- Cheese -->
+      <div class="ingredient cheese" id="cheese-1" style="display:none;"></div>
+      <div class="ingredient cheese" id="cheese-2" style="display:none;"></div>
+      <div class="ingredient cheese" id="cheese-3" style="display:none;"></div>
+      <div class="ingredient cheese" id="cheese-4" style="display:none;"></div>
+      <div class="ingredient cheese" id="cheese-5" style="display:none;"></div>
+
+      <!-- Meat -->
+      <div class="ingredient meat" id="meat-1" style="display:none;"></div>
+      <div class="ingredient meat" id="meat-2" style="display:none;"></div>
+      <div class="ingredient meat" id="meat-3" style="display:none;"></div>
+      <div class="ingredient meat" id="meat-4" style="display:none;"></div>
+      <div class="ingredient meat" id="meat-5" style="display:none;"></div>
+    </div>
+
+    <div class="bun-bottom"></div>
+  </div>
+
+  
+  <div class="controls-card">
+    <h3>Choose Your Ingredients</h3>
+    <div class="control">Lettuce:
+      <button onclick="updateIngredient('lettuce','less')">Less</button>
+      <button onclick="updateIngredient('lettuce','more')">More</button>
+    </div>
+    <div class="control">Bacon:
+      <button onclick="updateIngredient('bacon','less')">Less</button>
+      <button onclick="updateIngredient('bacon','more')">More</button>
+    </div>
+    <div class="control">Cheese:
+      <button onclick="updateIngredient('cheese','less')">Less</button>
+      <button onclick="updateIngredient('cheese','more')">More</button>
+    </div>
+    <div class="control">Meat:
+      <button onclick="updateIngredient('meat','less')">Less</button>
+      <button onclick="updateIngredient('meat','more')">More</button>
+    </div>
+    <button class="reset-btn" onclick="resetBurger()">Reset Burger</button>
+  </div>
+
+ 
+  <div id="price">Current Price: $4.00</div>
+
+
+  <div>
+    <button class="order-btn" onclick="placeOrder()">Place Order</button>
+  </div>
+
+  
+  <div id="login-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeLoginModal()">&times;</span>
+      <h2>Login</h2>
+      <input type="text" id="userid" placeholder="Enter Username"><br><br>
+      <input type="password" id="passid" placeholder="Enter Password"><br><br>
+      <button onclick="checklogin()">Login</button>
+    </div>
+  </div>
+
+ 
+  <div id="receipt-card" class="receipt-card" style="display:none;">
+    <h2>Order Receipt</h2>
+    <p><b>Order Number:</b> <span id="receiptOrderNumber"></span></p>
+    <p><b>Customer:</b> <span id="receiptUser"></span></p>
+    <p><b>Ingredients:</b></p>
+    <ul id="receiptIngredients">
+      <li id="receipt-lettuce" style="display:none;"></li>
+      <li id="receipt-bacon" style="display:none;"></li>
+      <li id="receipt-cheese" style="display:none;"></li>
+      <li id="receipt-meat" style="display:none;"></li>
+    </ul>
+    <p><b>Total Price:</b> $<span id="receiptTotal"></span></p>
+  </div>
+
+ 
+  <footer>
+    <p>🍔 Burger Madness | Made with ❤ in HTML, CSS & JS</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
